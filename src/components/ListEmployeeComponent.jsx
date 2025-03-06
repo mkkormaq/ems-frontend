@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { listEmployees } from "../services/EmployeeService";
 
+/**
+ * This component lists all the employees available in the EmployeeService.
+ *
+ * It first initializes an empty array of employees and then makes a call to
+ * the EmployeeService to fetch the list of employees. It then updates the state
+ * with the response data and renders the list of employees in a table.
+ *
+ * @returns A JSX element representing the list of employees.
+ */
 const ListEmployeeComponent = () => {
   const [employees, setEmployees] = useState([]);
   useEffect(() => {
