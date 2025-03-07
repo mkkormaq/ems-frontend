@@ -5,10 +5,10 @@ const HeaderComponent = () => {
     <div>
       <header>
         <nav
-          className="navbar bg-dark border-bottom border-body"
+          className="navbar bg-dark border-bottom border-body ps-3"
           data-bs-theme="dark"
         >
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand " href="#">
             Employee Management System
           </a>
         </nav>
