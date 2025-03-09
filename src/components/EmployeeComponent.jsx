@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { createEmployee } from "../services/EmployeeService";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Handles the form submission to save a new employee.
+ *
+ * This component renders a form to enter the employee's first name, last name and email.
+ * It provides input validation and prevents the default form submission behavior.
+ * If the form is valid, it creates an employee object and sends it to the server via the createEmployee service.
+ * Upon successful creation, it navigates to the employee list page.
+ *
+ * @returns {JSX.Element} - The rendered component.
+ */
 const EmployeeComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,6 +24,16 @@ const EmployeeComponent = () => {
   });
 
   const navigate = useNavigate();
+
+  /**
+   * Handles the form submission to save a new employee.
+   *
+   * This function prevents the default form submission behavior, validates the form data,
+   * and if valid, creates an employee object and sends it to the server via the createEmployee service.
+   * Upon successful creation, it navigates to the employee list page.
+   *
+   * @param {object} event - The event object from the form submission.
+   */
   function saveEmployee(event) {
     event.preventDefault();
 
@@ -31,6 +51,15 @@ const EmployeeComponent = () => {
     }
   }
 
+  /**
+   * Validate the form data and update the errors state.
+   *
+   * This function checks if the first name, last name and email are not empty.
+   * If any of them are empty, it adds an error message to the errors state.
+   * If all of them are not empty, it clears the errors state.
+   *
+   * @returns {boolean} - True if the form is valid, false otherwise.
+   */
   function validateForm() {
     let valid = true;
 
