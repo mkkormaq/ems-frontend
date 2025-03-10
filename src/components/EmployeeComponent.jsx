@@ -63,6 +63,9 @@ const EmployeeComponent = () => {
   function validateForm() {
     let valid = true;
 
+    // Create a copy of the errors object using spread operator.
+    // This ensures that we don't modify the original errors object.
+    // This is important because React relies on references and needs a new object to trigger a re-render.
     const errorsCopy = { ...errors };
 
     if (firstName.trim()) {
