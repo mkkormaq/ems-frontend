@@ -1,5 +1,13 @@
 import React from "react";
 
+/**
+ * Renders the application header.
+ *
+ * This component renders a Bootstrap navbar with the application name
+ * "Employee Management System" on the left side.
+ *
+ * @returns {JSX.Element} - The rendered component.
+ */
 const HeaderComponent = () => {
   return (
     <div>
