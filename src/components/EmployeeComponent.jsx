@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
  * @returns {JSX.Element} - The rendered component.
  */
 const EmployeeComponent = () => {
-  //TODO understand destructuring better
+  //TODO understand destructuring
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
