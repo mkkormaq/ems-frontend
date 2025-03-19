@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { createEmployee, getEmployee } from "../services/EmployeeService";
+import {
+  createEmployee,
+  getEmployee,
+  updateEmployee,
+} from "../services/EmployeeService";
 import { useNavigate, useParams } from "react-router-dom";
 
 /**
@@ -51,7 +55,7 @@ const EmployeeComponent = () => {
    *
    * @param {object} event - The event object from the form submission.
    */
-  function saveEmployee(event) {
+  function saveOrUpdateEmployee(event) {
     event.preventDefault();
 
     if (validateForm()) {
@@ -61,10 +65,26 @@ const EmployeeComponent = () => {
         email,
       };
 
-      createEmployee(employee).then((response) => {
-        console.log(response.data);
-        navigate("/employees");
-      });
+      console.log(employee);
+      if (id) {
+        updateEmployee(id, employee)
+          .then((response) => {
+            console.log(response.data);
+            navigate("/employees");
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        createEmployee(employee)
+          .then((response) => {
+            console.log(response.data);
+            navigate("/employees");
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
     }
   }
 
@@ -175,7 +195,7 @@ const EmployeeComponent = () => {
               <button
                 className="btn btn-success"
                 type="submit"
-                onClick={saveEmployee}
+                onClick={saveOrUpdateEmployee}
               >
                 Submit
               </button>
