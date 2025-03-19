@@ -7,7 +7,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 
 /**
- * Handles the form submission to save a new employee.
+ * Handles the form submission to save a new em ployee.
  *
  * This component renders a form to enter the employee's first name, last name and email.
  * It provides input validation and prevents the default form submission behavior.
